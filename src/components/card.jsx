@@ -17,7 +17,7 @@ const ProductCard = ({ product, images }) => {
   };
 
   return (
-    <div className="border border-gray-300 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 w-72 mx-auto">
+    <div className="border border-gray-300 rounded-lg shadow hover:shadow-lg transition transform hover:scale-105 w-72 mx-auto mb-8">
       <div className="flex justify-center mb-3">
         <Swiper
           modules={[Pagination]}
@@ -47,7 +47,7 @@ const ProductCard = ({ product, images }) => {
       </div>
       <div className="grid grid-cols-1 px-2">
         <div className="border border-x-0 p-3 bg-white">
-          <h2 className="text-xl font-semibold text-blue-800 truncate">{product.name}</h2>
+          <h2 className="text-xl font-semibold text-blue-800 capitalize truncate">{product.name}</h2>
           <p className="text-gray-500 text-sm h-6 mb-6">
             {truncateDescription(product.observation, 80)}
           </p>
