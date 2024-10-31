@@ -22,7 +22,7 @@ const Home = () => {
       const data = response.data.data;
       if (data.length > 0) {
         setProducts(prevProducts => [...prevProducts, ...response.data.data]);
-      }else{
+      } else {
         setFinish(true)
       }
 
@@ -61,10 +61,13 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div className="container mx-auto p-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {products.map((product) => {
+
+          return (
+            <ProductCard key={product.id} product={product} images={product.product_files} />
+          );
+        })}
       </div>
       {loading && <p className="text-center">Cargando...</p>} {/* Mensaje de carga */}
     </div>
